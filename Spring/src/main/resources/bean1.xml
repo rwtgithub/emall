@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd 
+         http://www.springframework.org/schema/tx 
+		">
+     
+
+     
+     <!-- <bean id="ioc"   class="com.rwt.springmvc.Ioc2"></bean>
+    -->
+    <!-- <bean id="iocdao1" class="com.rwt.dao.IocDao"></bean>
+    <bean id="iocdao2" class="com.rwt.dao.IocDao2"></bean>
+    <aop:config>
+    	<aop:pointcut expression="execution(* com.rwt.dao.IocDao.hhh())" id="pointcut1"/>
+    	<aop:aspect ref="iocdao2">
+    		<aop:before method="add" pointcut-ref="pointcut1"/>
+    		<aop:after method="after" pointcut-ref="pointcut1"/>
+    		<aop:around method="around1" pointcut-ref="pointcut1"/>
+    	</aop:aspect>
+    	
+    </aop:config> -->
+    <!--<context:property-placeholder location="classpath:dbconfig.properties"/>
+    
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"  value="${jdbcUrl}"></property>
+        <property name="driverClass" value="${driverClass}"></property>
+        <property name="user" value="${user}"></property>
+        <property name="password" value="${password}"></property>
+    </bean>
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    
+     <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
+    
+    <bean id="SqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+             <property name="dataSource" ref="dataSource"></property>
+    		<property name="configLocation" value="classpath:conf.xml"></property>
+    		<property name="mapperLocations" value="classpath:com/rwt/entity/*.xml"></property>
+    </bean>-->
+    <!-- <mybatis-spring -->
+    
+   <context:component-scan base-package="com.rwt.ssm.*"></context:component-scan>
+ </beans>           
+        
