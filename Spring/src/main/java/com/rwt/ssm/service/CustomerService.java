@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerService {
     static {
-        System.out.println("CustomerService load");
+        System.out.println("CustomerService 加载");
         System.out.println(System.currentTimeMillis());
     }
      public CustomerService(){
         System.out.println("CustomerService 对象构建");
-        System.out.println("CustomerService"+this.toString());
+        System.out.println("CustomerService 对象"+this.toString());
      }
 
     public Customer getCustomer(){

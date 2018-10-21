@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rwt.ocr.dao.RoleDao">
+    
+    
+    <!-- <select id="getAllUser" resultType="com.rwt.ocr.entity.User">
+        select * from user  
+    </select> -->
+    <select id="getRoleByName" parameterType="String" resultType="String">
+         select role from roles where username=#{name}
+    </select>
+</mapper>

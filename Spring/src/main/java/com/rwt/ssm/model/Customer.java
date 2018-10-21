@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * @date
  *
  */
-@Component
+
 public class Customer {
     static {
         System.out.println("Customer 加载");

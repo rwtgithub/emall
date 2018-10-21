@@ -11,6 +11,8 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
+import javax.servlet.ServletContext;
+
 
 @Configuration
 @ComponentScan("com.rwt.ssm.controller")
@@ -26,12 +28,18 @@ public class WebConfig extends WebMvcConfigurationSupport {
     @Bean
     public SpringTemplateEngine templateEngine(ITemplateResolver iTemplateResolver) {
         SpringTemplateEngine engine = new SpringTemplateEngine();
-        engine.setTemplateResolver();
+        engine.setTemplateResolver(iTemplateResolver);
         return engine;
     }
     @Bean
-    public ITemplateResolver iTemplateResolver(){
-         ServletContextTemplateResolver servletContextTemplateResolver=new ServletContextTemplateResolver();
+    public ITemplateResolver iTemplateResolver(ServletContext servletContext){
+         ServletContextTemplateResolver servletContextTemplateResolver=new ServletContextTemplateResolver(servletContext);
+         servletContextTemplateResolver.setPrefix("/WEB-INF/templates/");
+         servletContextTemplateResolver.setSuffix(".html");
+         servletContextTemplateResolver.setTemplateMode("HTML5");
+         servletContextTemplateResolver.setCharacterEncoding("UTF-8");
+         return  servletContextTemplateResolver;
+
     }
     @Override
     protected void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
